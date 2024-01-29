@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--******GOOGLE FONTS  *****-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&display=swap" rel="stylesheet">
+
+<!--*****CSS LINK  *****-->
+    <link rel="stylesheet" href="/CSS/style.css">
+
+    <style>
+        /* Modal styles */
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+    
+        .modal-content {
+          background-color: #fefefe;
+          margin-left: 400px;
+          margin-top: 20px;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 30%;
+          border-radius: 16px;
+        }
+    
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+    
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+    
+        /* Form styles */
+        form {
+          display: flex;
+          flex-direction: column;
+        }
+    
+        input[type=text], input[type=email], input[type=password]{
+          margin-bottom: 10px;
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+        }
+    
+        input[type=submit] {
+         background:  rgba(3, 4, 94, 0.80);
+          color: white;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 120px;
+        }
+
+        input[type=login] {
+            background: rgba(255, 255, 255, 0.80);
+            color:  rgba(3, 4, 94, 0.80);
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100px;
+          border: 2px solid rgba(3, 4, 94, 0.80);;
+        }
+
+        input[type=username] {
+            background: rgba(255, 255, 255, 0.80);
+            color:  rgba(3, 4, 94, 0.80);
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100px;
+          border: 2px solid rgba(3, 4, 94, 0.80);;
+        }
+
+
+        #real-btn{
+        display: flex;
+        margin-left: 12px;
+        gap: 45px;
+        }
+    
+        /* input[type=submit]:hover {
+          /* background-color: #45a049; */
+         
+
+
+        #signheader{
+        text-align: center;
+        font-family: 'Hind Madurai', sans-serif;
+        font-size: 40px;
+        font-weight: 300;
+        color:  rgba(3, 4, 94, 0.80);
+        }
+
+        #name-txt{
+    color:  rgba(3, 4, 94, 0.80);
+    font-weight: 700px;
+    font-family: 'Hind Madurai', sans-serif; 
+        }
+
+        #eml-txt{
+    color:  rgba(3, 4, 94, 0.80);
+    font-weight: 700px;
+    font-family: 'Hind Madurai', sans-serif; 
+        }
+
+        #name{
+            width: 300px;
+            border: 2px solid  rgba(3, 4, 94, 0.80);
+        }
+
+        #email{
+            width: 300px;
+            border: 2px solid  rgba(3, 4, 94, 0.80);
+        }
+
+        #password{
+            width: 300px;
+            border: 2px solid  rgba(3, 4, 94, 0.80);
+        }
+
+      </style>
+</head>
+<body>
+    <!-- first section starts here  -->
+<section id="body1">
+    <nav id="navbar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+            <g clip-path="url(#clip0_2_45)">
+              <path d="M15.7463 4.10235L15.7247 4.0722" stroke="black" stroke-miterlimit="10"/>
+              <path d="M15.7463 4.10233H15.7426" stroke="black" stroke-miterlimit="10"/>
+              <path d="M13.3867 23.509V49.7677H0.0372925V5.12204L13.3867 23.509Z" fill="#03045E" stroke="black" stroke-miterlimit="10"/>
+              <path d="M13.3868 0.11763V0" stroke="black" stroke-miterlimit="10"/>
+              <path d="M49.9627 5.07132V49.7677H49.52L36.6132 31.9902V5.07132H49.9627Z" fill="#ADE8F4" stroke="black" stroke-miterlimit="10"/>
+              <path d="M48.7721 49.9625L32.4517 49.7677L13.3867 23.509L0.0372925 5.12205V5.07132H17.069L35.8652 32.1857L48.7721 49.9625Z" fill="#023E8A" stroke="black" stroke-miterlimit="10"/>
+              <path d="M50 49.7677H49.9627" stroke="black" stroke-miterlimit="10"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_2_45">
+                <rect width="50" height="50" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+
+          <ul id="navlist">
+            <li id="navli">Home</li>
+            <li id="navli">About</li>
+            <li id="navli">Services</li>
+            <li id="navli">Resuorces</li>
+            <li id="navli">Contact Us</li>
+            
+          </ul>
+
+          <div id="home-button">
+            <button id="login-btn">LOGIN</button>
+            <button id="sign-up">SIGN UP</button>
+          </div>
+
+          
+    </nav>
+
+    <main id="main-bar">
+        <div id="main-txt">Lorem ipsum dolor sit amet</div>
+        
+        <div id="main-txt2">NEXA DIGITAL AGENCY</div>
+        <div id="main-txt3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+
+        <main id="double-button2">
+            <button id="explore-btn">EXPLORE</button>
+         
+            <!-- Trigger/Open The Modal -->
+            <button id="signup-btn">SIGN UP</button>
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h3 id="signheader">Sign up</h3>
+                  <form id="formulate">
+
+                    <input type="text" id="name" name="name" required placeholder="Firstname"> <br>
+                    
+                    <input type="text" id="name" name="name" required placeholder="Lastname"> <br>
+
+
+                    <input type="username" id="email" name="Username" required placeholder="Username"> <br>
+
+                    <input type="email" id="email" name="email" required placeholder="Email"> <br>
+
+                    <input type="password" id="password" name="password" required placeholder="Password"> <br>
+
+                    <input type="password" id="password" name="password" required placeholder="Confirm password"> <br>
+
+              <div id="real-btn">
+                
+                <input type="submit" value="Sign UP" id="submit">
+
+                <input type="login" value="Login" id="submit">
+              </div>
+
+                  </form>
+                </div>
+              
+              </div>
+       
+
+
+
+
+<!-- The Modal -->
+
+        </main>
+
+      
+
+    </main>
+
+
+
+   
+</section>
+    <!-- first section ends here  -->
+
+    <!-- second section starts here -->
+    <section id="body2">
+      <div id="firstbatch">
+        <main id="lack1">
+          <span id="lack-text1">Lorem ipsum dolor sit amet</span> <img src="/ASSETS/Arrow.png" alt="">
+        </main>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="250" height="210" viewBox="0 0 250 210" fill="none" id="svgshelf">
+          <path d="M187.5 26.25H62.5C39.5833 26.25 20.8333 42 20.8333 61.25V148.75C20.8333 168 39.5833 183.75 62.5 183.75H187.5C210.417 183.75 229.167 168 229.167 148.75V61.25C229.167 42 210.417 26.25 187.5 26.25ZM208.333 148.75C208.333 158.375 198.958 166.25 187.5 166.25H62.5C51.0416 166.25 41.6666 158.375 41.6666 148.75V87.5H208.333V148.75ZM208.333 70H41.6666V61.25C41.6666 51.625 51.0416 43.75 62.5 43.75H187.5C198.958 43.75 208.333 51.625 208.333 61.25V70Z" fill="#ADE8F4"/>
+          <path d="M113.542 64.75C118.144 64.75 121.875 61.616 121.875 57.75C121.875 53.884 118.144 50.75 113.542 50.75C108.939 50.75 105.208 53.884 105.208 57.75C105.208 61.616 108.939 64.75 113.542 64.75Z" fill="#ADE8F4"/>
+          <path d="M86.4583 64.75C91.0607 64.75 94.7917 61.616 94.7917 57.75C94.7917 53.884 91.0607 50.75 86.4583 50.75C81.856 50.75 78.125 53.884 78.125 57.75C78.125 61.616 81.856 64.75 86.4583 64.75Z" fill="#ADE8F4"/>
+          <path d="M60.4166 64.75C65.019 64.75 68.75 61.616 68.75 57.75C68.75 53.884 65.019 50.75 60.4166 50.75C55.8143 50.75 52.0833 53.884 52.0833 57.75C52.0833 61.616 55.8143 64.75 60.4166 64.75Z" fill="#ADE8F4"/>
+        </svg>
+
+        <main id="lack3">
+          <span id="software-package">Software Package</span>
+          <span id="software-package-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+        </main>
+      </div>
+
+      <div id="secondbatch">
+        <main id="lack1">
+          <span id="lack-text1">Lorem ipsum dolor sit amet</span> <img src="/ASSETS/Arrow.png" alt="">
+        </main>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="250" height="210" viewBox="0 0 250 210" fill="none" id="svgbooks">
+          <g clip-path="url(#clip0_3_109)">
+            <path d="M20.8333 175H229.167V140H20.8333V175ZM41.6667 148.75H62.5V166.25H41.6667V148.75ZM20.8333 35V70H229.167V35H20.8333ZM62.5 61.25H41.6667V43.75H62.5V61.25ZM20.8333 122.5H229.167V87.5H20.8333V122.5ZM41.6667 96.25H62.5V113.75H41.6667V96.25Z" fill="white" fill-opacity="0.9"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_3_109">
+              <rect width="250" height="210" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+
+        <main id="lack3">
+          <span id="software-package">Database Management</span>
+          <span id="software-package-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+        </main>
+      </div>
+    </section>
+    <!-- second section ends here -->
+
+    <section id="body3">
+      <div id="firstbatch-1">
+        <main id="lack1">
+          <span id="lack-text1-one">Lorem ipsum dolor sit amet</span> <img src="/ASSETS/Arrowblack.svg" alt="">
+        </main>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="250" height="210" viewBox="0 0 250 210" fill="none" id="svgshelf">
+          <path d="M208.333 140C201.868 140.028 195.571 141.74 190.312 144.9L164.792 132.213C165.996 129.073 166.628 125.798 166.667 122.5C166.637 114.76 163.553 107.247 157.899 101.136C152.245 95.0244 144.338 90.66 135.417 88.725V68.425C142.367 66.3609 148.224 62.2994 151.954 56.9583C155.684 51.6172 157.046 45.3404 155.8 39.2373C154.553 33.1343 150.778 27.5978 145.142 23.6066C139.506 19.6153 132.372 17.4263 125 17.4263C117.628 17.4263 110.494 19.6153 104.858 23.6066C99.2215 27.5978 95.4466 33.1343 94.2 39.2373C92.9534 45.3404 94.3155 51.6172 98.0455 56.9583C101.775 62.2994 107.633 66.3609 114.583 68.425V88.725C105.662 90.66 97.7553 95.0244 92.1009 101.136C86.4465 107.247 83.3632 114.76 83.3333 122.5C83.372 125.798 84.0042 129.073 85.2083 132.213L59.6875 144.9C54.4287 141.74 48.1324 140.028 41.6666 140C35.486 140 29.4441 141.54 24.3051 144.424C19.166 147.308 15.1606 151.408 12.7954 156.205C10.4302 161.001 9.81131 166.279 11.0171 171.371C12.2229 176.463 15.1992 181.14 19.5696 184.812C23.9399 188.483 29.5082 190.983 35.5701 191.996C41.632 193.008 47.9153 192.489 53.6255 190.502C59.3357 188.515 64.2163 185.15 67.6501 180.834C71.0839 176.517 72.9166 171.442 72.9166 166.25C72.8781 163.88 72.4576 161.525 71.6666 159.25L95.625 147.262C103.432 153.781 113.992 157.44 125 157.44C136.008 157.44 146.568 153.781 154.375 147.262L178.333 159.25C176.588 164.549 176.867 170.175 179.132 175.333C181.397 180.492 185.533 184.922 190.957 188.001C196.38 191.079 202.817 192.649 209.36 192.489C215.903 192.329 222.22 190.448 227.422 187.11C232.623 183.772 236.446 179.147 238.35 173.887C240.254 168.627 240.144 162.997 238.035 157.792C235.926 152.587 231.925 148.07 226.596 144.877C221.267 141.685 214.879 139.979 208.333 140ZM41.6666 175C39.6064 175 37.5925 174.487 35.8795 173.525C34.1664 172.564 32.8313 171.197 32.0429 169.598C31.2545 168 31.0482 166.24 31.4501 164.543C31.8521 162.846 32.8441 161.287 34.3009 160.063C35.7577 158.839 37.6138 158.006 39.6344 157.668C41.6551 157.331 43.7495 157.504 45.6529 158.166C47.5563 158.828 49.1832 159.95 50.3278 161.389C51.4724 162.828 52.0833 164.519 52.0833 166.25C52.0833 168.571 50.9858 170.796 49.0323 172.437C47.0788 174.078 44.4293 175 41.6666 175ZM125 35C127.06 35 129.074 35.5132 130.787 36.4746C132.5 37.4361 133.835 38.8027 134.624 40.4015C135.412 42.0004 135.618 43.7597 135.216 45.457C134.815 47.1544 133.822 48.7135 132.366 49.9372C130.909 51.1609 129.053 51.9943 127.032 52.3319C125.012 52.6695 122.917 52.4962 121.014 51.834C119.11 51.1717 117.483 50.0502 116.339 48.6112C115.194 47.1723 114.583 45.4806 114.583 43.75C114.583 41.4294 115.681 39.2038 117.634 37.5628C119.588 35.9219 122.237 35 125 35ZM125 140C120.88 140 116.852 138.974 113.426 137.051C110 135.128 107.329 132.395 105.752 129.197C104.176 125.999 103.763 122.481 104.567 119.086C105.371 115.691 107.355 112.573 110.269 110.126C113.182 107.678 116.894 106.011 120.936 105.336C124.977 104.661 129.166 105.008 132.973 106.332C136.779 107.657 140.033 109.9 142.322 112.778C144.611 115.655 145.833 119.039 145.833 122.5C145.833 127.141 143.638 131.592 139.731 134.874C135.824 138.156 130.525 140 125 140ZM208.333 175C206.273 175 204.259 174.487 202.546 173.525C200.833 172.564 199.498 171.197 198.71 169.598C197.921 168 197.715 166.24 198.117 164.543C198.519 162.846 199.511 161.287 200.968 160.063C202.424 158.839 204.28 158.006 206.301 157.668C208.322 157.331 210.416 157.504 212.32 158.166C214.223 158.828 215.85 159.95 216.994 161.389C218.139 162.828 218.75 164.519 218.75 166.25C218.75 168.571 217.653 170.796 215.699 172.437C213.745 174.078 211.096 175 208.333 175Z" fill="#0077B6"/>
+        </svg>
+
+        <main id="lack3">
+          <span id="software-package-one">Software Package</span>
+          <span id="software-package-2-two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+        </main>
+      </div>
+
+      <div id="secondbatch-2">
+        <main id="lack1">
+          <span id="lack-text1-one">Lorem ipsum dolor sit amet</span> <img src="/ASSETS/Arrowblack.svg" alt="">
+        </main>
+        <svg xmlns="http://www.w3.org/2000/svg" width="250" height="210" viewBox="0 0 250 210" fill="none" id="svgshelf">
+          <g clip-path="url(#clip0_3_99)">
+            <path d="M208.333 157.5C219.844 157.5 229.062 149.669 229.062 140L229.167 52.5C229.167 42.8312 219.844 35 208.333 35H41.6667C30.1562 35 20.8333 42.8312 20.8333 52.5V140C20.8333 149.669 30.1562 157.5 41.6667 157.5H0V175H250V157.5H208.333ZM41.6667 52.5H208.333V140H41.6667V52.5Z" fill="#0077B6"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_3_99">
+              <rect width="250" height="210" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+
+        <main id="lack3">
+          <span id="software-package-one">Database Management</span>
+          <span id="software-package-2-two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+        </main>
+      </div>
+    </section>
+    <!-- third section starts here -->
+
+    <!-- fourth section starts here  -->
+    <section id="body4">
+
+        <img src="/ASSETS/nexawhite 1.png" alt="" id="nexawhite">
+        <div id="digi-system">NEXA DIGITAL SYSTEM</div>
+
+        <div>
+          <main id="system1">
+            <div id="tem1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" viewBox="0 0 25 30" fill="none">
+                <path d="M16.6667 8.57143V0.669643C16.9054 0.825893 17.1007 0.982143 17.2526 1.13839L23.8932 7.96875C24.0451 8.125 24.197 8.32589 24.349 8.57143H16.6667ZM14.5833 9.10714C14.5833 9.55357 14.7352 9.93304 15.0391 10.2455C15.3429 10.558 15.7118 10.7143 16.1458 10.7143H25V28.3929C25 28.8393 24.8481 29.2188 24.5443 29.5312C24.2404 29.8437 23.8715 30 23.4375 30H1.5625C1.12847 30 0.759549 29.8437 0.455729 29.5312C0.15191 29.2188 0 28.8393 0 28.3929V1.60714C0 1.16071 0.15191 0.78125 0.455729 0.46875C0.759549 0.15625 1.12847 0 1.5625 0H14.5833V9.10714Z" fill="#0077B6"/>
+              </svg>
+
+              <div>
+                <span  id="file">File</span><br>
+                <span id="file2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </div>
+
+            </div>
+
+            <div id="tem2">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 20 30" fill="none">
+                <path d="M8.99987 0C8.81862 0.000120805 8.64082 0.0494972 8.48547 0.14285C8.33011 0.236203 8.20305 0.370022 8.11787 0.53L0.117867 15.531C0.0365186 15.6834 -0.00398235 15.8542 0.000308752 16.0268C0.00459985 16.1995 0.0535368 16.3681 0.142353 16.5162C0.231169 16.6644 0.356836 16.787 0.507113 16.8721C0.65739 16.9572 0.827153 17.002 0.999867 17.002H5.83487L4.01187 28.85C3.97889 29.0664 4.01781 29.2876 4.12264 29.4797C4.22748 29.6718 4.39245 29.8242 4.59224 29.9136C4.79204 30.0029 5.01563 30.0242 5.22871 29.9743C5.44179 29.9243 5.6326 29.8058 5.77187 29.637L19.7729 12.635C19.8931 12.4887 19.9694 12.3113 19.9927 12.1234C20.0161 11.9355 19.9856 11.7448 19.9048 11.5735C19.8241 11.4022 19.6963 11.2574 19.5365 11.1559C19.3766 11.0543 19.1912 11.0003 19.0019 11H12.6849L17.8779 1.479C17.9609 1.32676 18.003 1.15554 17.9999 0.982142C17.9968 0.808743 17.9487 0.639131 17.8602 0.489958C17.7717 0.340786 17.646 0.217181 17.4954 0.131282C17.3447 0.0453827 17.1743 0.000141294 17.0009 0H8.99987Z" fill="#0077B6"/>
+              </svg>
+
+              <div>
+                <span  id="file">Efficiency</span><br>
+                <span id="file2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </div>
+            </div>
+          </main>
+
+
+          <main id="system2">
+            <div id="tem1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                <path d="M18.75 19.7165L5 13.9332V26.8165C5.00725 27.3538 5.16801 27.8777 5.46332 28.3266C5.75863 28.7755 6.17617 29.1305 6.66667 29.3498L18.65 34.9998H18.75V19.7165ZM20 17.4998L34.1833 11.5498C33.9446 11.2846 33.6557 11.0694 33.3333 10.9165L21.3333 5.29985C20.9165 5.10257 20.4611 5.00024 20 5.00024C19.5389 5.00024 19.0835 5.10257 18.6667 5.29985L6.66667 10.9165C6.34427 11.0694 6.05537 11.2846 5.81667 11.5498L20 17.4998ZM21.25 19.7165V34.9998H21.3333L33.3333 29.3498C33.8213 29.1317 34.2371 28.7793 34.5322 28.3336C34.8274 27.888 34.9896 27.3676 35 26.8332V13.9332L21.25 19.7165Z" fill="#0077B6"/>
+              </svg>
+
+              <div>
+                <span  id="file">Scalabilty</span><br>
+                <span id="file2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </div>
+
+            </div>
+
+            <div id="tem2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M30 16.539C30 22.5525 27 30 15 30C3 30 0 22.5525 0 15.036C0 7.5195 4.5 4.5105 4.5 4.5105C3.5565 6.4035 4.3935 9.4845 5.145 11.5095C8.0175 1.1505 19.5 0 19.5 0C16.5 1.5 16.257 12.0285 21 12.0285C25.5 12.0285 22.5 6.0135 22.5 6.0135C22.5 6.0135 30 7.518 30 16.539Z" fill="#0077B6"/>
+              </svg>
+
+              <div>
+                <span  id="file">Integration</span><br>
+                <span id="file2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </div>
+            </div>
+          </main>
+
+        </div>
+
+    </section>
+    <!-- fourth section ends here  -->
+
+    <!-- fifth section starts here  -->
+
+    <section id="body5">
+      <div id="dot-one">
+        <figure id="dot-mini">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+        </figure>
+
+        <figure id="dot-mini">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+        </figure>
+      </div>
+
+
+      <span id="black-layertxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</span>
+
+      <div id="dot-two">
+        <figure id="dot-mini">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+        </figure>
+
+        <figure id="dot-mini">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+        </figure>
+
+        
+        <figure id="dot-mini">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <circle cx="9.5" cy="9.5" r="9.5" fill="#D9D9D9" fill-opacity="0.4"/>
+          </svg>
+        </figure>
+      </div>
+    </section>
+    <!-- fifth section ends here  -->
+
+    <!-- sixths section starts here  -->
+    <div id="body6">
+      <span id="testimonial">Testimonials</span>
+
+      <div id="testimony">
+        <img src="/ASSETS/Frame 29.png" alt="frame 29">
+
+        <img src="/ASSETS/Frame 30.png" alt="frame 30">
+
+        <img src="/ASSETS/Frame 29.png" alt="frame 31">
+      </div>
+    </div>
+<!-- sixths section ends here  -->
+
+<!-- seventh section starts here  -->
+<section id="body7">
+<div id="contact-txt">Contact Us</div>
+
+<div id="the-box">
+ 
+  <img src="/ASSETS/Vector 2.png" alt="" id="twisted-arrow">
+
+  <main id="contact-div">
+    <figure id="contact-rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none" id="contact-head">
+        <path d="M100 89.5832C121.861 89.5832 139.583 71.8611 139.583 49.9998C139.583 28.1386 121.861 10.4165 100 10.4165C78.1387 10.4165 60.4167 28.1386 60.4167 49.9998C60.4167 71.8611 78.1387 89.5832 100 89.5832Z" fill="black"/>
+        <path d="M116.667 93.75H83.3333C70.6298 93.7654 58.451 98.8187 49.4682 107.802C40.4854 116.784 35.4321 128.963 35.4167 141.667V183.333C35.4167 184.991 36.0752 186.581 37.2473 187.753C38.4194 188.925 40.0091 189.583 41.6667 189.583H158.333C159.991 189.583 161.581 188.925 162.753 187.753C163.925 186.581 164.583 184.991 164.583 183.333V141.667C164.568 128.963 159.515 116.784 150.532 107.802C141.549 98.8187 129.37 93.7654 116.667 93.75Z" fill="black"/>
+      </svg>
+    </figure>
+
+    <div id="contact-info">
+      <div id="username-div">
+        <label for="" id="username-label">Username</label>
+        <input type="text" id="username" placeholder="dessy">
+      </div>
+
+      <div id="email-div">
+        <label for="email" id="email-label">Email</label>
+        <input type="email" id="username" placeholder="dessy@gmail.com">
+      </div>
+
+            <div id="message-div">
+        <label for="message" id="message-label">Message</label>
+        <textarea id="message" placeholder="Type your message here"></textarea>
+  
+    </div>
+  </main>
+
+</div>
+</section>
+<!-- seventh section ends here  -->
+
+<!-- footer starts here  -->
+<footer id="footer-container">
+ <div id="one-footer">
+  <img src="/ASSETS/nexawhite 1.png" alt="" id="nexablack">
+
+  <main id="lists">
+    <ul id="ul">
+      <li id="caption">Product</li>
+      <li id="li">Software Package</li>
+      <li id="li">Management</li>
+      <l id="li">Data Analysis</li>
+      <li id="li">DataBase Management</li>
+    </ul>
+
+    <ul id="ul">
+      <li id="caption">Information</li>
+      <li id="li">FAQ</li>
+      <li id="li">Blog</li>
+      <li id="li">Support</li>
+    </ul>
+
+    <ul id="ul">
+      <li id="caption">Company</li>
+      <li id="li">About US</li>
+      <li id="li">Career</li>
+      <li id="li">Contact Us</li>
+      <li id="li">Nexa Digital</li> 
+    </ul>
+
+    <ul id="ul">
+      <li id="caption">Social</li>
+      <li id="li">Facebook</li>
+      <li id="li">Instagram</li>
+      <li id="li">Twitter</li>
+      <li id="li">LinkedIn</li>
+    </ul>
+
+<div id="malady">
+  <span id="subscribe">Subscribe</span>
+  <div id="email-box"><button id="bt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.23347 13.0723L14.8898 7.49251C15.4106 6.97848 15.4106 6.1453 14.8898 5.63285L9.23347 0.0530968L7.34788 1.91394L10.7279 5.24743H0L0 7.87754H10.7279L7.34788 11.2122L9.23347 13.0723Z" fill="white"/>
+  </svg></button>
+  </div>
+  <span id="toren">and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem</span>
+</div>
+
+    <div id="newsbox">
+    </div>
+  </main>
+ </div>
+
+ <div id="footer-line"></div>
+</footer>
+<!-- footere ends here  -->
+
+
+</body>
+
+<script src="/JS/script.js"></script>
+</html>
